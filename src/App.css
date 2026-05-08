@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0a0a0a;
+  --surface: #111111;
+  --surface2: #1a1a1a;
+  --border: #2a2a2a;
+  --accent: #e8ff3c;
+  --accent2: #ff3c6e;
+  --text: #f0f0f0;
+  --text-muted: #666;
+  --radius: 12px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans KR', sans-serif;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+/* 헤더 */
+.header {
+  margin-bottom: 60px;
+}
+
+.header-label {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 80px;
+  line-height: 1;
+  color: var(--text);
+  letter-spacing: 2px;
+}
+
+.title span {
+  color: var(--accent);
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* 업로드 */
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dropzone {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 48px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: var(--surface);
+  text-align: center;
+}
+
+.dropzone:hover,
+.dropzone.dragging {
+  border-color: var(--accent);
+  background: var(--surface2);
+}
+
+.dropzone.has-file {
+  border-color: var(--accent);
+}
+
+.drop-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: var(--text-muted);
+}
+
+.drop-text {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.drop-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.file-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.file-icon {
+  font-size: 40px;
+}
+
+.file-name {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.file-size {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* 미리보기 */
+.preview {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.preview img {
+  width: 100%;
+  display: block;
+  max-height: 300px;
+  object-fit: contain;
+  background: var(--surface);
+}
+
+/* 버튼 */
+.analyze-btn {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: var(--radius);
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 1px;
+}
+
+.analyze-btn:hover:not(:disabled) {
+  background: #f5ff70;
+  transform: translateY(-1px);
+}
+
+.analyze-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-loading {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #000;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-6px); }
+}
+
+/* 결과 */
+.result-section {
+  margin-top: 48px;
+  border-top: 1px solid var(--border);
+  padding-top: 48px;
+}
+
+.result-label {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.result-content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  line-height: 1.8;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.result-content h1,
+.result-content h2,
+.result-content h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--accent);
+  letter-spacing: 1px;
+  margin: 24px 0 8px;
+}
+
+.result-content ul,
+.result-content ol {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+
+.result-content li {
+  margin: 4px 0;
+}
+
+.result-content strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.result-content p {
+  margin: 8px 0;
+}
